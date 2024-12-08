@@ -124,7 +124,8 @@ PAGE_PREV.onclick = () => {
     if (current_page <= 0) return;
     CONTAINER_DETAIL.innerHTML = "";
     current_page -= 1;
-    for (let i = current_page * 8; i < 8; i++) {
+    let n = current_page * 8 + 8;
+    for (let i = current_page * 8; i < n; i++) {
         handle_create_detail_color(list_details[i]);
     }
     NUMBER_PER_ALL.textContent = `${current_page + 1}/${number_of_pages}`;
