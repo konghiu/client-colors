@@ -48,7 +48,11 @@ body {
     padding: 4px 10px;
 }
 
-/* container detals */
+/* container quantity */
+.container_quantity {
+    margin: 20px 10px;
+}
+/* container details */
 .container-details {
     margin-top: 25px;
     display: flex;
@@ -103,6 +107,11 @@ body {
     .container-colors .color {
         width: 50%;
     }
+
+    .container_quantity {
+        margin: 0;
+    }
+
     .container-details {
         gap: 10px 0;
     }

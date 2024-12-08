@@ -12,6 +12,8 @@ const INPUT_DATETO = document.getElementById("date-to");
 let from_prev = "0";
 let to_prev = "0";
 
+const CONTAINER_QUANTITY = document.querySelector(".container_quantity");
+
 const CONTAINER_DETAIL = document.querySelector(".container-details");
 const NAVBAR_PAGES = document.querySelector(".navbar_pages");
 const PAGE_PREV = document.querySelector(".page_prev");
@@ -100,6 +102,7 @@ FILTER_DATE.onclick = async () => {
                 CONTAINER_DETAIL.innerHTML = "";
                 list_details = data;
                 number_of_pages = Math.ceil(list_details.length / 8);
+                current_page = 0;
                 let n = number_of_pages > 1 ? 8 : number_of_pages;
 
                 for (let i = 0; i < n; i++) {
@@ -107,6 +110,7 @@ FILTER_DATE.onclick = async () => {
                 }
                 if (number_of_pages > 1) NAVBAR_PAGES.style.display = "flex";
                 else NAVBAR_PAGES.style.display = "none";
+                CONTAINER_QUANTITY.innerHTML = `<p>Có <b>${list_details.length}</b> sản phẩm</p>`;
 
                 NUMBER_PER_ALL.textContent = `1/${number_of_pages}`;
             })
