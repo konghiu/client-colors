@@ -72,6 +72,10 @@ body {
     width: 100%;
     display: none;
     justify-content: center;
+    align-items: center;
+}
+.navbar_pages b {
+    font-size: 16px;
 }
 
 .navbar_pages p {

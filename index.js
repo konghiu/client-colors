@@ -1,5 +1,5 @@
-const HOST = "https://iot-colors.vercel.app";
-// const HOST = "http://localhost:8000";
+// const HOST = "https://iot-colors.vercel.app";
+const HOST = "http://localhost:8000";
 const RED = document.getElementById("red_quantity");
 const GREEN = document.getElementById("green_quantity");
 const BLUE = document.getElementById("blue_quantity");
@@ -16,6 +16,7 @@ const CONTAINER_DETAIL = document.querySelector(".container-details");
 const NAVBAR_PAGES = document.querySelector(".navbar_pages");
 const PAGE_PREV = document.querySelector(".page_prev");
 const PAGE_NEXT = document.querySelector(".page_next");
+const NUMBER_PER_ALL = document.querySelector(".number_per_all");
 
 let list_details = [];
 let number_of_pages = 0;
@@ -106,6 +107,8 @@ FILTER_DATE.onclick = async () => {
                 }
                 if (number_of_pages > 1) NAVBAR_PAGES.style.display = "flex";
                 else NAVBAR_PAGES.style.display = "none";
+
+                NUMBER_PER_ALL.textContent = `1/${number_of_pages}`;
             })
             .catch((err) => {
                 console.log(err);
@@ -120,6 +123,7 @@ PAGE_PREV.onclick = () => {
     for (let i = current_page * 8; i < 8; i++) {
         handle_create_detail_color(list_details[i]);
     }
+    NUMBER_PER_ALL.textContent = `${current_page + 1}/${number_of_pages}`;
 };
 
 PAGE_NEXT.onclick = () => {
@@ -131,6 +135,7 @@ PAGE_NEXT.onclick = () => {
     for (let i = current_page * 8; i < n; i++) {
         handle_create_detail_color(list_details[i]);
     }
+    NUMBER_PER_ALL.textContent = `${current_page + 1}/${number_of_pages}`;
 };
 
 function handle_create_detail_color(detail) {
