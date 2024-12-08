@@ -19,8 +19,13 @@ body {
     font-size: 36px;
 }
 
+.container-colors {
+    display: flex;
+    flex-wrap: wrap;
+}
 .container-colors .color {
     display: flex;
+    width: 25%;
     gap: 20px;
     margin: 20px 0;
 }
@@ -33,4 +38,83 @@ body {
 .container-colors .color .color_content p {
     font-weight: 600;
     font-size: 24px;
+}
+
+/* filter date */
+.filter_date > input[type="data"] {
+    margin: 1px;
+}
+.filter_date > * {
+    padding: 4px 10px;
+}
+
+/* container detals */
+.container-details {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px 100px;
+}
+
+.container-details .detail_color {
+    display: flex;
+    gap: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.container-details .detail_color .detail_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.navbar_pages {
+    width: 100%;
+    display: none;
+    justify-content: center;
+}
+
+.navbar_pages p {
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px 15px;
+}
+.navbar_pages p:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        overflow-y: scroll !important;
+    }
+
+    #hello {
+        font-size: 28px;
+    }
+
+    .container-colors .color {
+        width: 50%;
+    }
+    .container-details {
+        gap: 10px 0;
+    }
+    .container-details > div {
+        width: 100%;
+    }
+
+    .filter_date {
+        display: flex;
+        flex-direction: column;
+    }
+    .filter_date > * {
+        margin: 1px 0;
+    }
+    .filter_date > button {
+        margin: 15px 0;
+        width: fit-content;
+    }
 }

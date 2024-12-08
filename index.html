@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>IOT COLORS</title>
         <link rel="stylesheet" href="./index.css" />
     </head>
     <body>
@@ -37,6 +37,18 @@
                     <p id="others_quantity">2</p>
                 </div>
             </div>
+        </div>
+        <div class="filter_date">
+            <label for="date-from">Từ</label>
+            <input type="date" id="date-from" name="mm/dd/yy" />
+            <label for="date-to">Đến</label>
+            <input type="date" id="date-to" name="mm/dd/yy" />
+            <button id="button_filter_date">Lọc</button>
+        </div>
+        <div class="container-details"></div>
+        <div class="navbar_pages">
+            <p class="page_prev"><</p>
+            <p class="page_next">></p>
         </div>
     </body>
     <script src="./index.js"></script>
