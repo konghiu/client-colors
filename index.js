@@ -1,5 +1,5 @@
-// const URL = "https://iot-colors.vercel.app/colors/quantity";
-const HOST = "http://localhost:8000";
+const URL = "https://iot-colors.vercel.app";
+// const HOST = "http://localhost:8000";
 const RED = document.getElementById("red_quantity");
 const GREEN = document.getElementById("green_quantity");
 const BLUE = document.getElementById("blue_quantity");
