@@ -68,8 +68,21 @@ body {
 }
 .container-details .detail_color .detail_content {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-evenly;
+}
+.container-details .detail_color .detail_content > span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 1px 10px;
+    border-radius: 10%;
+}
+.container-details .detail_color .detail_content > span:hover {
+    background-color: #ccc;
 }
 
 .navbar_pages {
