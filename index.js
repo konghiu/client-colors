@@ -1,5 +1,5 @@
-const HOST = "https://iot-colors.vercel.app";
-// const HOST = "http://localhost:8000";
+// const HOST = "https://iot-colors.vercel.app";
+const HOST = "http://localhost:8000";
 const RED = document.getElementById("red_quantity");
 const GREEN = document.getElementById("green_quantity");
 const BLUE = document.getElementById("blue_quantity");
@@ -8,9 +8,6 @@ const OTHERS = document.getElementById("others_quantity");
 const FILTER_DATE = document.getElementById("button_filter_date");
 const INPUT_DATEFROM = document.getElementById("date-from");
 const INPUT_DATETO = document.getElementById("date-to");
-
-let from_prev = "0";
-let to_prev = "0";
 
 const CONTAINER_QUANTITY = document.querySelector(".container_quantity");
 
@@ -64,21 +61,19 @@ FILTER_DATE.onclick = async () => {
     let from = INPUT_DATEFROM.value;
     let to = INPUT_DATETO.value;
 
-    if (to == to_prev && from == from_prev) return;
-    from_prev = from;
-    to_prev = to;
-
     if (!from && to) {
         from = new Date(to);
-        from = new Date(from.setHours(0, 0, 0, 0));
+        to = new Date(to);
     } else {
         const now = new Date();
-        if (!from) from = now;
+        if (!from) from = new Date(now);
         else from = new Date(from);
 
-        if (!to) to = new Date(now.setHours(0, 0, 0, 0));
+        if (!to) to = new Date(now);
         else to = new Date(to);
     }
+    from.setHours(0, 0, 0);
+    to.setHours(23, 59, 59);
 
     if (from > to) alert("SAI NGAY");
     else {
